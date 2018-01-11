@@ -2,22 +2,18 @@
     include_once('../function/testDonneeForm.php');
 
     
-    if(isset($_POST[$name]) && strlen($_POST[$name]) <= $taille) {
-        $req = $bdd->prepare('INSERT INTO article ('.$name.') VALUES(?)');
-        
-        $req->execute(array($_POST[$name]));
-
-        $lastid = $bdd->exec('
-        SELECT LAST_INSERT_ID() FROM evenements
-        ');
+    if(isset($_POST['email']) && isset($_POST['pseudo']) && isset($_POST['MDP'])) {
+        $req = $bdd->prepare('INSERT INTO t_users(pseudo, email, MDP, T_ROLES_idT_ROLES, admin) VALUES(:pseudo, :email, :MDP, :role, :admin)');
+        $req->execute(array(
+            'pseudo' => $_POST['pseudo'],
+            'email' => $_POST['email'],
+            'MDP' => $_POST['MDP'],
+            'role' => 1,
+            'admin' => 1,
+            ));
     }
 
 
-    testDonneeForm('titre', 5, $lastid);
+    header('Location: ./main.php');
 
-    testDonneeForm('categorie', 5, $lastid);
-
-    testDonneeForm('sousTitre', 5, $lastid);
-
-    testDonneeForm('content', 5, $lastid);
 
