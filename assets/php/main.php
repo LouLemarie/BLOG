@@ -45,36 +45,36 @@
                                 <input type="search" placeholder="Search">
                             </li>
                             <li>
-                                <div class="button">
-                                    <button class="button btn-5 pop-up-button-sign-in">Sign in</button>
+                                <div class="button col-xs-12">
+                                    <button class="button btn-5 pop-up-button-sign-in" style="margin: 20px auto; width:100%">Sign Up</button>
                                 </div>
                             </li>
                             <li>
-
-                                <button class="btn-5 pop-up-button">login</button>
-
+                                <div class="button col-xs-12">
+                                <button class="button btn-5 pop-up-button" style="margin: 20px auto; width:100%">login</button>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
 
 
-                <div class="col-xs-12">
+                <div class="tag col-xs-12">
 
                     <a href="">
-                        <li class="col-sm-2"></li>
+                        <li class="col-sm-2">TRAVEL</li>
                     </a>
                     <a href="">
-                        <li class="col-sm-2"></li>
+                        <li class="col-sm-2">FOOD</li>
                     </a>
                     <a href="">
-                        <li class="col-sm-2"></li>
+                        <li class="col-sm-2">MONEY</li>
                     </a>
                     <a href="">
-                        <li class="col-sm-2"></li>
+                        <li class="col-sm-2">FUN</li>
                     </a>
                     <a href="">
-                        <li class="col-sm-2"></li>
+                        <li class="col-sm-2">TECHNOLOGY</li>
                     </a>
                     <a href="">
                         <li class="col-sm-2"></li>
@@ -106,6 +106,24 @@
                 </div>
             </div>
         </div>
+        <div class="wrapper-two">
+
+            <div class="pop-up-two">
+                <div class="pop-up-text">
+                    <div class="container-fluid">
+                        <form id="form" method="POST" action="">
+
+                            <input class="col-xs-12" name=pseudo id="pseudo" type="text" placeholder="PSEUDO">
+                            <input class="col-xs-12" name=email id="email" type="text" placeholder="E-MAIL">
+                            <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="PASSWORD">
+                            <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="REPEAT PASSWORD">
+                            <input class="col-xs-12" id="submit" type="submit" value="REGISTER">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
 </body>
@@ -123,6 +141,11 @@
     $(document).ready(function () {
         $('.pop-up-button').click(function () {
             $('.wrapper').toggleClass('show');
+            $('.wrapper-two').removeClass('show');
+        });
+        $('.pop-up-button-sign-in').click(function () {
+            $('.wrapper-two').toggleClass('show');
+            $('.wrapper').removeClass('show');
         });
     });
 

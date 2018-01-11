@@ -40,7 +40,8 @@ input[type=search] {
 	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
 	border: solid 1px #ccc;
 	padding: 9px 10px 9px 32px;
-	width: 55px;
+  width: 55px;
+  margin: 31px 25px;
 	
 	-webkit-border-radius: 10em;
 	-moz-border-radius: 10em;
@@ -59,6 +60,7 @@ input[type=search]:focus {
 	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
 	box-shadow: 0 0 5px rgba(109,207,246,.5);
 }
+
 
 
 input:-moz-placeholder {
@@ -222,9 +224,9 @@ button:hover {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    
   }
-  
-  
+
   
   .pop-up-button {
     
@@ -245,14 +247,29 @@ button:hover {
   }
   
   .pop-up {
-    width: 50%;
+    
     margin: 100px auto;
     border: 5px solid black;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.75);
     opacity: 0;
     transition: all 0.2s cubic-bezier(0.12, 0.13, 0.14, 0.15);
+    position: absolute;
+    background-color: white;
+
   }
- 
+  .pop-up-two {
+   
+    margin: 100px auto;
+    border: 5px solid black;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.12, 0.13, 0.14, 0.15);
+    position: absolute;
+    background-color: white;
+  }
+  .show .pop-up-two {
+    opacity: 1;
+  }
   
   .show .pop-up {
     opacity: 1;
@@ -261,22 +278,7 @@ button:hover {
     pointer-events: auto;
   }
   
-  @media screen and (max-width: 650px) {
-    .pop-up {
-      width: 80%;
-    }
-    .pop-up .pop-up-text {
-      font-size: .8em;
-    }
-  
-    .pop-up-button {
-      font-size: .8em;
-      width: 80px;
-      height: 40px;
-      line-height: 40px;
-    }
-  }
-
+ 
 
 /*--------------------------------------------- form --------------------------------------------------*/
 
@@ -400,12 +402,12 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
   
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
-  color: #b3aca7;
-  
+  color: #2ecc71;
+  background-color: #000000;
   outline:none;
   cursor: pointer;
   
-  border: solid 1px #b3aca7;
+  border: solid 1px #000000;
   
 }
 
