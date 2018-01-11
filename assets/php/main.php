@@ -58,6 +58,8 @@
                     </div>
                 </nav>
 
+                
+
 
                 <div class="tag col-xs-12">
                     <ul>
@@ -102,11 +104,11 @@
                             <input class="col-xs-12" id="submit" type="submit" value="GO!">
 
                         </form>
-                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
-        <div class="wrapper-two">
+        <div class="wrapper-two" style="display:none">
  
            <div class="pop-up-two">
                <div class="pop-up-text">

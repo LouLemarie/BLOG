@@ -256,6 +256,7 @@ button:hover {
     transition: all 0.2s cubic-bezier(0.12, 0.13, 0.14, 0.15);
     position: absolute;
     background-color: white;
+    display: none;
 
   }
   .pop-up-two {
@@ -267,13 +268,14 @@ button:hover {
     transition: all 0.2s cubic-bezier(0.12, 0.13, 0.14, 0.15);
     position: absolute;
     background-color: white;
+    display: none;
   }
   .show .pop-up-two {
-    opacity: 1;
+    display: block;
   }
   
   .show .pop-up {
-    opacity: 1;
+    display: block;
   }
   .show .pop-up-text a {
     pointer-events: auto;
