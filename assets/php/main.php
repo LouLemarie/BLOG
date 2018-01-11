@@ -44,14 +44,14 @@
                             <li>
                                 <input type="search" placeholder="Search">
                             </li>
-                            <li>
+                            <li style="margin:0px 10px;">
                                 <div class="button">
-                                    <button class="button btn-5 pop-up-button-sign-in">Sign in</button>
+                                    <button class="button btn-5 pop-up-button-sign-in" style="margin: 20px auto; width:100%">Sign Up</button>
                                 </div>
                             </li>
-                            <li>
+                            <li  style="margin:0px 10px;">
 
-                                <button class="btn-5 pop-up-button">login</button>
+                                <button class="btn-5 pop-up-button" style="margin: 20px auto; width:100%">login</button>
 
                             </li>
                         </ul>
@@ -59,7 +59,6 @@
                 </nav>
 
 
-<<<<<<< HEAD
                 <div class="tag col-xs-12">
                     <ul>
                     <a href="">
@@ -76,24 +75,6 @@
                     </a>
                     <a href="">
                         <li class="col-sm-2 col-xs-12">TECHNOLOGY</li>
-=======
-                <div class="col-xs-12">
-
-                    <a href="">
-                        <li class="col-sm-2"></li>
-                    </a>
-                    <a href="">
-                        <li class="col-sm-2"></li>
-                    </a>
-                    <a href="">
-                        <li class="col-sm-2"></li>
-                    </a>
-                    <a href="">
-                        <li class="col-sm-2"></li>
-                    </a>
-                    <a href="">
-                        <li class="col-sm-2"></li>
->>>>>>> ebd369f6b4bd0fffb9258b9d03786a18b9dc8dda
                     </a>
                     <a href="">
                         <li class="col-sm-2 col-xs-12">TRAVEL</li>
@@ -125,7 +106,24 @@
                 </div>
             </div>
         </div>
+        <div class="wrapper-two">
+ 
+           <div class="pop-up-two">
+               <div class="pop-up-text">
+                   <div class="container-fluid">
+                       <form id="form" method="POST" action="">
 
+                           <input class="col-xs-12" name=pseudo id="pseudo" type="text" placeholder="PSEUDO">
+                          <input class="col-xs-12" name=email id="email" type="text" placeholder="E-MAIL">
+                           <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="PASSWORD">
+                           <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="REPEAT PASSWORD">
+                           <input class="col-xs-12" id="submit" type="submit" value="REGISTER">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+       </div>
     </main>
 </body>
 
@@ -139,11 +137,17 @@
     crossorigin="anonymous"></script>
 
 <script>
-    $(document).ready(function () {
-        $('.pop-up-button').click(function () {
-            $('.wrapper').toggleClass('show');
-        });
+ $(document).ready(function () {
+    $('.pop-up-button').click(function () {
+        $('.wrapper').toggleClass('show');
+        $('.wrapper-two').removeClass('show');
     });
+    $('.pop-up-button-sign-in').click(function () {
+        $('.wrapper-two').toggleClass('show');
+        $('.wrapper').removeClass('show');
+    });
+});
+
 
 </script>
 
