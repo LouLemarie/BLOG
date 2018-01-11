@@ -1,5 +1,5 @@
 <?php
-    session_start()
+    session_start();
     $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
 
