@@ -59,6 +59,24 @@
                 </nav>
 
 
+<<<<<<< HEAD
+                <div class="tag col-xs-12">
+                    <ul>
+                    <a href="">
+                        <li class="col-sm-2 col-xs-12 ">TRENDING</li>
+                    </a>
+                    <a href="">
+                        <li class="col-sm-2 col-xs-12 ">FOOD</li>
+                    </a>
+                    <a href="">
+                        <li class="col-sm-2 col-xs-12 ">MONEY</li>
+                    </a>
+                    <a href="">
+                        <li class="col-sm-2 col-xs-12">FUN</li>
+                    </a>
+                    <a href="">
+                        <li class="col-sm-2 col-xs-12">TECHNOLOGY</li>
+=======
                 <div class="col-xs-12">
 
                     <a href="">
@@ -75,11 +93,12 @@
                     </a>
                     <a href="">
                         <li class="col-sm-2"></li>
+>>>>>>> ebd369f6b4bd0fffb9258b9d03786a18b9dc8dda
                     </a>
                     <a href="">
-                        <li class="col-sm-2"></li>
+                        <li class="col-sm-2 col-xs-12">TRAVEL</li>
                     </a>
-
+                    </ul>
                 </div>
 
 
