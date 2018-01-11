@@ -414,3 +414,59 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
 #form #submit:hover {
   color: #e2dedb;
 }
+
+
+/*-----------------------------------------------------------------TAG-----------------------------------------------------------*/
+
+.tag li{
+  text-decoration: none;
+  text-align: center;
+  border: solid 3px black;
+  display: inline;
+  color: #000;
+  margin: 2px auto;
+  
+}
+
+.tag li:hover {
+  border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 1px 1px 2px #427388;
+    color: #2ecc71;
+}
+
+.tag li::before,
+.tag li::after {
+  background: #fff;
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.tag li {
+  overflow: hidden;
+}
+
+.tag li::after {
+  /*background-color: #f00;*/
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+}
+
+.tag li:hover:after {
+    background: #eee;
+  height: 100%;
+  width: 135%;
+}
+
+.tag a{
+
+  text-decoration: none;
+}
