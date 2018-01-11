@@ -46,12 +46,12 @@
                             </li>
                             <li>
                                 <div class="button">
-                                    <button class="button btn-5 pop-up-button-sign-in">Sign in</button>
+                                    <button class="button btn-5 pop-up-button-sign-in">Login</button>
                                 </div>
                             </li>
                             <li>
 
-                                <button class="btn-5 pop-up-button">login</button>
+                                <button class="btn-5 pop-up-button">Sign In</button>
 
                             </li>
                         </ul>
