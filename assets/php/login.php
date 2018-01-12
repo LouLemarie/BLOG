@@ -1,19 +1,20 @@
 <?php
-    include_once('../function/testDonneeForm.php');
+      session_start();
+      $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
-    
-    if(isset($_POST['email']) && isset($_POST['pseudo']) && isset($_POST['MDP'])) {
-        $req = $bdd->prepare('INSERT INTO t_users(pseudo, email, MDP, T_ROLES_idT_ROLES, admin) VALUES(:pseudo, :email, :MDP, :role, :admin)');
-        $req->execute(array(
-            'pseudo' => $_POST['pseudo'],
-            'email' => $_POST['email'],
-            'MDP' => $_POST['MDP'],
-            'role' => 1,
-            'admin' => 1,
-            ));
+      $reponse = $bdd->query('SELECT * FROM t_users');
+
+
+    while($donnees = $reponse->fetch()) {
+        if( $_POST['email'] == $donnees['email']) {
+            if ($_POST['MDP'] == $donnees['MDP'] ) {
+                $_SESSION['pseudo'] = $donnees['pseudo'];
+                $_SESSION['success'] = true; 
+            }
+        }
     }
 
 
     header('Location: ./main.php');
-
-
+      
+?>
