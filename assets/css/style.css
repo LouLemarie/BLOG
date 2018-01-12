@@ -9,12 +9,24 @@ rm {
 /*-------------------------navabar*-------------------------------------*/ 
 
 .navbar {
-  border : 5px solid black;
+  border-bottom : 5px solid rgba(0, 0, 0, 0.212);
   border-radius: 0px;
   margin-top: 20px;
 }
 
+.navbar a {
 
+    color: #000;
+    font-family:'Roboto Slab';
+    font-size: 5em;
+}
+
+.navbar a:hover {
+
+  color:#2ecc71;
+  text-decoration: none;
+  
+}
 
 
 

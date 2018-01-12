@@ -38,7 +38,7 @@
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <a href="#">
-                                <img style="width: 100px;" src="http://www.free-icons-download.net/images/factory-logo-icon-84733.png" alt="logo factory blog">
+                                Entrade
                             </a>
                         </div>
                         <ul class="nav navbar-nav">
