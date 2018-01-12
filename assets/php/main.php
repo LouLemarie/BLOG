@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,8 +101,8 @@
                     <div class="container-fluid">
                         <form id="form" method="POST" action="./login.php">
 
-                            <input class="col-xs-12" name='pseudo' id="pseudo" type="text" placeholder="PSEUDO">
-                            <input class="col-xs-12" name='email' id="email" type="text" placeholder="E-MAIL">
+                            
+                            <input class="col-xs-12" name='email' id="email" type="text" placeholder="Pseudo ou E-MAIL">
                             <input class="col-xs-12" name='MDP' id="PASSWORD" type="text" placeholder="PASSWORD">
 
                             <input class="col-xs-12" id="submit" type="submit" value="GO!">
@@ -113,10 +117,10 @@
            <div class="pop-up-two">
                <div class="pop-up-text">
                    <div class="container-fluid">
-                       <form id="form" method="POST" action="">
+                       <form id="form" method="POST" action="./signup.php">
 
                            <input class="col-xs-12" name=pseudo id="pseudo" type="text" placeholder="PSEUDO">
-                          <input class="col-xs-12" name=email id="email" type="text" placeholder="E-MAIL">
+                           <input class="col-xs-12" name=email id="email" type="text" placeholder="E-MAIL">
                            <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="PASSWORD">
                            <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="REPEAT PASSWORD">
                            <input class="col-xs-12" id="submit" type="submit" value="REGISTER">
@@ -126,6 +130,14 @@
                 </div>
             </div>
        </div>
+
+        <?php
+            if($_SESSION['success']) {
+                echo ('<div class="alert alert-success"> Bienvenu sur notre site '.$_SESSION['pseudo'].' </div>');
+                $_SESSION['success'] = false;
+            }
+        ?>
+
     </main>
 </body>
 
@@ -149,8 +161,6 @@
         $('.wrapper').removeClass('show');
     });
 });
-
-
 </script>
 
 </html>

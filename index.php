@@ -5,6 +5,9 @@
     $_SESSION['ndcSQL'] = 'root';
     $_SESSION['mdpSQL'] = '';
 
+    $_SESSION['pseudo'] = '';
+    $_SESSION['success']= false;
+
     header('Location: ./assets/php/main.php');
     
 ?>
