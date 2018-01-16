@@ -49,19 +49,20 @@
                                 <input type="search" placeholder="Search">
                             </li>
                             <li style="margin:0px 10px;">
-                                <div class="button">
-                                    <button class="button btn-5 pop-up-button-sign-in" style="margin: 20px auto; width:100%">Sign Up</button>
-                                </div>
+                                <?php
+                                    include_once './button/button1.php';
+                                ?>
                             </li>
                             <li  style="margin:0px 10px;">
 
-                                <button class="btn-5 pop-up-button" style="margin: 20px auto; width:100%">login</button>
+                                <?php
+                                    include_once './button/button2.php';
+                                ?>
 
                             </li>
                         </ul>
                     </div>
                 </nav>
-
                 
 
 
@@ -93,6 +94,11 @@
 
             </header>
 
+            <?php
+                if($_SESSION['pseudo'] != '') {
+                    echo ("Bonjour" . $_SESSION['pseudo']);
+                }
+            ?>
         </div>
         <div class="wrapper">
 
@@ -103,7 +109,7 @@
 
                             
                             <input class="col-xs-12" name='email' id="email" type="text" placeholder="Pseudo ou E-MAIL">
-                            <input class="col-xs-12" name='MDP' id="PASSWORD" type="text" placeholder="PASSWORD">
+                            <input class="col-xs-12" name='mdp' id="PASSWORD" type="text" placeholder="PASSWORD">
 
                             <input class="col-xs-12" id="submit" type="submit" value="GO!">
 
@@ -121,8 +127,7 @@
 
                            <input class="col-xs-12" name=pseudo id="pseudo" type="text" placeholder="PSEUDO">
                            <input class="col-xs-12" name=email id="email" type="text" placeholder="E-MAIL">
-                           <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="PASSWORD">
-                           <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="REPEAT PASSWORD">
+                           <input class="col-xs-12" name=mdp id="PASSWORD" type="text" placeholder="PASSWORD">
                            <input class="col-xs-12" id="submit" type="submit" value="REGISTER">
 
                         </form>
@@ -130,13 +135,6 @@
                 </div>
             </div>
        </div>
-
-        <?php
-            if($_SESSION['success']) {
-                echo ('<div class="alert alert-success"> Bienvenu sur notre site '.$_SESSION['pseudo'].' </div>');
-                $_SESSION['success'] = false;
-            }
-        ?>
 
     </main>
 </body>

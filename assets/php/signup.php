@@ -1,20 +1,17 @@
 <?php
     session_start();
+
     $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
-    
-    if(isset($_POST['email']) && isset($_POST['pseudo']) && isset($_POST['MDP'])) {
-        $req = $bdd->prepare('INSERT INTO t_users(pseudo, email, MDP, T_ROLES_idT_ROLES, admin) VALUES(:pseudo, :email, :MDP, :role, :admin)');
+    if(isset($_POST['email']) && isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+        $req = $bdd->prepare('INSERT INTO t_users(pseudo, email, mdp, T_ROLES_ID_ROLE) VALUES(:pseudo, :email, :mdp, :role)');
         $req->execute(array(
             'pseudo' => $_POST['pseudo'],
             'email' => $_POST['email'],
-            'MDP' => $_POST['MDP'],
+            'mdp' => $_POST['mdp'],
             'role' => 1,
-            'admin' => 1,
-            ));
+        ));
     }
 
 
     header('Location: ./main.php');
-
-

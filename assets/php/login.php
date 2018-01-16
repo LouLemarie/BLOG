@@ -1,20 +1,17 @@
 <?php
-      session_start();
-      $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
+    session_start();
 
-      $reponse = $bdd->query('SELECT * FROM t_users');
+    $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
+    $req = $bdd->query('SELECT * FROM t_users');
 
-    while($donnees = $reponse->fetch()) {
-        if( $_POST['email'] == $donnees['email']) {
-            if ($_POST['MDP'] == $donnees['MDP'] ) {
-                $_SESSION['pseudo'] = $donnees['pseudo'];
-                $_SESSION['success'] = true; 
-            }
+    while($user = $req->fetch()) {
+
+        if(($user['email'] || $user['pseudo']  == $_POST['email']) && $user['mdp'] == $_POST['mdp']) {
+            $_SESSION['login'] = true;
+            $_SESSION['pseudo'] = $user['pseudo'];
         }
     }
 
 
     header('Location: ./main.php');
-      
-?>
