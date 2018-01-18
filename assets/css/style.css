@@ -253,6 +253,9 @@ width: 135%;
     background-color: white;
     display: none;
 
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+
   }
 
   .pop-up-two {
@@ -265,6 +268,9 @@ width: 135%;
     position: absolute;
     background-color: white;
     display: none;
+
+    left: 50%;
+    -webkit-transform: translateX(-50%);
   }
   .show .pop-up-two {
     display: block;
