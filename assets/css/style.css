@@ -302,6 +302,8 @@ width: 135%;
 
 .show .pop-up {
   display: block;
+
+
 }
 .show .pop-up-text a {
   pointer-events: auto;
