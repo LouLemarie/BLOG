@@ -27,6 +27,8 @@
 
 <body>
 
+
+
     <main class="container">
 
         <div class="row">
@@ -118,6 +120,7 @@
             </div>
         </div>
        <?php
+            include_once './errorOnLogin.php';
             include_once './newArticle.php';
             include_once './afficheArticle.php';
        ?>

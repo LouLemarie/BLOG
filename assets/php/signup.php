@@ -5,10 +5,31 @@
     $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
     // On vérifie nos variables
-    if(isset($_POST['email']) && isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+
+   /* $email = $_POST['email'];
+    $pseudo = $_POST['pseudo'];
+
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $testValidation = true ;
+}
+
+
+   echo '<br>pseudo : ' . $_POST['pseudo'];
+   echo '<br>email : ' . $_POST['email'];
+
+   echo '<br>test existance : ' . testExist('pseudo');
+   echo '<br> test existance : ' . testExist('email');
+   
+   */
+
+
+
+if ( !testExist('email') && !testExist('pseudo')) {
+
+    if (isset($_POST['email']) && isset($_POST['pseudo']) && isset($_POST['mdp'])) {
         // On initialise une requète
         $req = $bdd->prepare('INSERT INTO t_users(pseudo, email, mdp) VALUES(:pseudo, :email, :mdp)');
-    
+
         // On execute la requète
         $req->execute(array(
             'pseudo' => $_POST['pseudo'],
@@ -17,9 +38,25 @@
         ));
         $_SESSION['login'] = true;
         $_SESSION['pseudo'] = $_POST['pseudo'];
+        $_SESSION['errorLogin'] = false;
+
+        //echo '<br> Bien envoyé';
     }
 
-    header('Location: ./main.php');
+
+
+} else {
+
+    $_SESSION['errorLogin'] = true;
+
+    //echo '<br> Déjà utilisé';
+}
+
+   header('Location: ./main.php');
+
+
+
+
 
 
 
@@ -30,5 +67,18 @@
     //                                                                         -> si NON : return false
 
     function testExist($var) {
-        echo $var;
+        $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
+        $request = $bdd->query('SELECT * FROM t_users');
+        $test = false;
+
+        while($user = $request->fetch()) {
+            if($user[$var] == $_POST[$var]) {
+                $test = true ;
+            }
+        }
+
+        return $test;
     }
+
+    ?>
+
