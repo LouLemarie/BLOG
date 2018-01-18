@@ -244,7 +244,7 @@ width: 135%;
 }
  .pop-up {
     
-    margin: 100px auto;
+
     border: 5px solid black;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.75);
     
@@ -260,7 +260,7 @@ width: 135%;
 
   .pop-up-two {
    
-    margin: 100px auto;
+
     border: 5px solid black;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.75);
     
@@ -287,7 +287,7 @@ width: 135%;
 
 .pop-up-two {
  
-  margin: 100px auto;
+  
   border: 5px solid black;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.75);
   transition: all 0.2s cubic-bezier(0.12, 0.13, 0.14, 0.15);
@@ -302,6 +302,8 @@ width: 135%;
 
 .show .pop-up {
   display: block;
+
+
 }
 .show .pop-up-text a {
   pointer-events: auto;
