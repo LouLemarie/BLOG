@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
@@ -38,7 +39,7 @@
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <a href="#">
-                                <img style="width: 100px;" src="http://www.free-icons-download.net/images/factory-logo-icon-84733.png" alt="logo factory blog">
+                                Entrade
                             </a>
                         </div>
                         <ul class="nav navbar-nav">
@@ -49,19 +50,20 @@
                                 <input type="search" placeholder="Search">
                             </li>
                             <li style="margin:0px 10px;">
-                                <div class="button">
-                                    <button class="button btn-5 pop-up-button-sign-in" style="margin: 20px auto; width:100%">Sign Up</button>
-                                </div>
+                                <?php
+                                    include_once './button/button1.php';
+                                ?>
                             </li>
                             <li  style="margin:0px 10px;">
 
-                                <button class="btn-5 pop-up-button" style="margin: 20px auto; width:100%">login</button>
+                                <?php
+                                    include_once './button/button2.php';
+                                ?>
 
                             </li>
                         </ul>
                     </div>
                 </nav>
-
                 
 
 
@@ -93,6 +95,9 @@
 
             </header>
 
+            <?php
+                include_once './successNewArticle.php';
+            ?>
         </div>
         <div class="wrapper">
 
@@ -103,7 +108,7 @@
 
                             
                             <input class="col-xs-12" name='email' id="email" type="text" placeholder="Pseudo ou E-MAIL">
-                            <input class="col-xs-12" name='MDP' id="PASSWORD" type="text" placeholder="PASSWORD">
+                            <input class="col-xs-12" name='mdp' id="PASSWORD" type="text" placeholder="PASSWORD">
 
                             <input class="col-xs-12" id="submit" type="submit" value="GO!">
 
@@ -112,31 +117,10 @@
                 </div>
             </div>
         </div>
-        <div class="wrapper-two" style="display:none">
- 
-           <div class="pop-up-two">
-               <div class="pop-up-text">
-                   <div class="container-fluid">
-                       <form id="form" method="POST" action="./signup.php">
-
-                           <input class="col-xs-12" name=pseudo id="pseudo" type="text" placeholder="PSEUDO">
-                           <input class="col-xs-12" name=email id="email" type="text" placeholder="E-MAIL">
-                           <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="PASSWORD">
-                           <input class="col-xs-12" name=MDP id="PASSWORD" type="text" placeholder="REPEAT PASSWORD">
-                           <input class="col-xs-12" id="submit" type="submit" value="REGISTER">
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-       </div>
-
-        <?php
-            if($_SESSION['success']) {
-                echo ('<div class="alert alert-success"> Bienvenu sur notre site '.$_SESSION['pseudo'].' </div>');
-                $_SESSION['success'] = false;
-            }
-        ?>
+       <?php
+            include_once './newArticle.php';
+            include_once './afficheArticle.php';
+       ?>
 
     </main>
 </body>
@@ -155,6 +139,7 @@
     $('.pop-up-button').click(function () {
         $('.wrapper').toggleClass('show');
         $('.wrapper-two').removeClass('show');
+        
     });
     $('.pop-up-button-sign-in').click(function () {
         $('.wrapper-two').toggleClass('show');
