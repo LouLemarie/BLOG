@@ -3,7 +3,7 @@
     $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
     // Effectue une requète vers t_articles
-    $req = $bdd->query('SELECT * FROM t_articles');
+    $req = $bdd->query('SELECT * FROM t_articles ORDER BY `date` DESC ');
 
     // On effectue une boucle qui lit t_articles ($req)
     while($article = $req->fetch()) {
@@ -11,13 +11,14 @@
         $titre = $article['titre'];
         $categorie = 'Cuisine';
         $post = 'redigé';
-        $contenu = $article['contenu']; 
+        $contenu = $article['contenu'];
+        $date = $article['date'];
 
         // Message d'affichage
         echo '
         <div class="article">
             <div class="titre">' . $titre .'</div>
-            <div class="status">post: '.$post.' / catégorie: '.$categorie.'</div>
+            <div class="status">post: '.$post.' / catégorie: '.$categorie.' Date : '.$date.'</div>
             <div class="contenu">'.$contenu.'</div>
         </div>
         ';

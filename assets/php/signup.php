@@ -19,7 +19,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
    echo '<br>test existance : ' . testExist('pseudo');
    echo '<br> test existance : ' . testExist('email');
-   
+
    */
 
 
