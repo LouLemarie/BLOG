@@ -109,8 +109,8 @@
                         <form id="form" method="POST" action="./login.php">
 
                             
-                            <input class="col-xs-12" name='email' id="email" type="text" placeholder="Pseudo ou E-MAIL">
-                            <input class="col-xs-12" name='mdp' id="PASSWORD" type="text" placeholder="PASSWORD">
+                            <input class="col-xs-12" name='email' id="email" type="text" placeholder="E-MAIL">
+                            <input class="col-xs-12" name='mdp' id="PASSWORD" type="password" placeholder="PASSWORD">
 
                             <input class="col-xs-12" id="submit" type="submit" value="GO!">
 
@@ -120,9 +120,10 @@
             </div>
         </div>
        <?php
+            include_once './errorOnSignUp.php';
             include_once './errorOnLogin.php';
             include_once './newArticle.php';
-            include_once './afficheArticle.php';
+            include_once './page.php';
        ?>
 
     </main>

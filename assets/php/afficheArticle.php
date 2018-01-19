@@ -1,20 +1,20 @@
 <?php
-    // Ouvrir la bdd
+
     $bdd = new PDO($_SESSION['host'], $_SESSION['ndcSQL'], $_SESSION['mdpSQL']);
 
-    // Effectue une requète vers t_articles
-    $req = $bdd->query('SELECT * FROM t_articles ORDER BY `date` DESC ');
 
-    // On effectue une boucle qui lit t_articles ($req)
+
+    $req = $bdd->query('SELECT * FROM t_articles ORDER BY dateHeure DESC LIMIT 0, 10');
+
+
     while($article = $req->fetch()) {
-        // On récupère toutes nos variables
+
         $titre = $article['titre'];
         $categorie = 'Cuisine';
         $post = 'redigé';
         $contenu = $article['contenu'];
-        $date = $article['date'];
+        $date = $article['dateHeure'];
 
-        // Message d'affichage
         echo '
         <div class="article">
             <div class="titre">' . $titre .'</div>
@@ -22,6 +22,9 @@
             <div class="contenu">'.$contenu.'</div>
         </div>
         ';
-    }   
+    }
 
 ?>
+
+
+

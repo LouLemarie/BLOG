@@ -10,7 +10,7 @@ if(!$_SESSION['login']) {
 
                                 <input class="col-xs-12" name=pseudo id="pseudo" type="text" placeholder="PSEUDO">
                                 <input class="col-xs-12" name=email id="email" type="text" placeholder="E-MAIL">
-                                <input class="col-xs-12" name=mdp id="PASSWORD" type="text" placeholder="PASSWORD">
+                                <input class="col-xs-12" name=mdp id="PASSWORD" type="password" placeholder="PASSWORD">
                                 <input class="col-xs-12" id="submit" type="submit" value="REGISTER">
 
                             </form>

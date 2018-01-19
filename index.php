@@ -19,7 +19,8 @@
     $_SESSION['login'] = false;
     $_SESSION['pseudo'] = '';
     $_SESSION['newArticle'] = false;
-    $_SESSION['errorLogin'] = false;
+    $_SESSION['errorSignUp'] = false;
+    $_SESSION['errorOnLogin'] = false;
 
     header('Location: ./assets/php/main.php');
     
